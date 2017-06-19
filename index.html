@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="jp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>みなナビ</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet"/>
+    <!-- Loaded Bootstrap from Remote Server. -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            var search_text_box = $(".search-text-box");
+            var suggestion_text = '今日はどんなお店に？';
+            search_text_box.on('click focusin', function () {
+                if ($(".search-text-box").val() === suggestion_text) {
+                    this.value = '';
+                }
+            });
+        })
+        $('a, input[type="button"], input[type="submit"], button, .touch-hover')
+          .on('touchstart', function(){
+            $(this).addClass('hover');
+        }).on('touchend', function(){
+            $(this).removeClass('hover');
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+          var data = [
+            'BAR Joker',
+            'すりわさ 過労死',
+            'すりわさ 家出少女',
+            'すりわさ 田中',
+            'すりわさ　汁男優',
+            'Girls BAR 家出少女',
+            '人材斡旋きるみす',
+            'スナックあいりん',
+            'おっぱいパブ恋歌',
+            'ハプニングバー田中',
+            'スナックきるみす'
+          ];
+
+          $('#txtKeywd').autocomplete({
+            source: data,
+            autoFocus: true,
+            delay: 500,
+            minLength: 1
+          });
+        });
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Styles -->
+     <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <div class="bottom-nav">
+        <ul>
+            <li>
+                <a href="./search-op.html">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <p>検索</p>
+                </a>
+            </li>
+            <li>
+                <a href="./history.html">
+                <i class="fa fa-history" aria-hidden="true"></i>
+                <p>履歴</p>
+                </a>
+            </li>
+            <li>
+                <a href="./coupon.html">
+                <i class="fa fa-jpy" aria-hidden="true"></i>
+                <p>割安</p>
+                </a>
+            </li>
+            <li>
+                <a href="./mypage.html">
+                <i class=  "fa fa-user-o" aria-hidden="true"></i>
+                <p>マイページ</p>
+                </a>
+            </li>
+            <li>
+                <a href="./favorite.html">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <p>お気に入り</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="gray-layer"></div>
+
+<div class="content">
+    <div class="top-nav">
+        <div class="top-nav-title">
+            みななび
+        </div>
+        <div class="top-nav-menu">
+           <i class="fa fa-bell-o" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <label for="tags"></label>
+    <div id="search-box">
+        <form method="get" action="./search.html" accept-charset="UTF-8" id="search-form">
+            <!-- <input name="_token" type="hidden" value="T29NZHSvXHkz97JsFlmZzPQZDWjZ6lRvK1Dj6eju">
+                           -->
+            <input name="kw" id="txtKeywd" class="form-control-inbox search-text-box" type="text" value="今日はどんなお店に？">
+        </form>
+        	<a id="search"class="fa fa-search" aria-hidden="true" href="bar_joker/index.html"></a>
+    </div>
+    <!--
+    <div class="links">
+		<a href="https://laracasts.com">エリア検索</a>
+        <a href="https://laracasts.com">カテゴリ検索</a>
+    </div>
+    -->
+    <div class="sec">
+        <div style="width: 130px" class="btn btn-warning">
+        カテゴリ
+        </div>
+        <div style="width: 130px" class="btn btn-danger btn">
+        新着★割引情報
+        </div>
+            
+        <div class="clear"></div>
+        <div id="slide_tokusyu">
+        　　  <div id="frame">
+              <div id="slide1"><img src="img/slide1.png"></div>
+              <div id="slide2"><img src="img/slide2.png"></div>
+              <div id="slide3"><img src="img/slide3.png"></div>
+              <div id="slide4"><img src="img/slide4.png"></div>
+              <div id="slide5"><img src="img/slide5.png"></div>
+            </div>
+        </div>
+    </div>
+    <div class="page-area">
+        <div class="sec sec2">
+            <div class="ad-frame">
+                <a href="./bar_joker/index.html">
+                    <div class="ad-card">
+                        <div class="ad-photo">
+                            <img src="bar_joker/tensyu.jpg">
+                        </div>
+                        <div class="ad-text">
+                        テキーラサービス
+                        </div>
+                    </div>
+                </a>
+                <a href="./bar_joker/index.html">
+                    <div class="ad-card">
+                        <div class="ad-photo">
+                            <img src="bar_joker/datensi.jpg">
+                        </div>
+                        <div class="ad-text">
+                        堕天使降臨
+                        </div>
+                    </div>
+                </a>
+                <a href="./bar_joker/index.html">
+                    <div class="ad-card">
+                        <div class="ad-photo">
+                            <img src="bar_joker/tensyu.jpg">
+                        </div>
+                        <div class="ad-text">
+                        テキーラサービス
+                        </div>
+                    </div>
+                </a>
+                <a href="./bar_joker/index.html">
+                    <div class="ad-card">
+                        <div class="ad-photo">
+                            <img src="bar_joker/datensi.jpg">
+                        </div>
+                        <div class="ad-text">
+                        堕天使降臨
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

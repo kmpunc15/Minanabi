@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="jp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>みなナビ</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet"/>
+    <!-- Loaded Bootstrap from Remote Server. -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function () {
+            var search_text_box = $(".search-text-box");
+            var suggestion_text = '今日はどんなお店に？';
+            search_text_box.on('click focusin', function () {
+                if ($(".search-text-box").val() === suggestion_text) {
+                    this.value = '';
+                }
+            });
+        })
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Styles -->
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-image: url('https://i.ytimg.com/vi/pmNBdTZ10e0/maxresdefault.jpg'); */
+            background-repeat: no-repeat;
+        }
+        img {
+            width:100%;
+            max-width: 100%;
+            height: auto;
+        }
+        .full-height {
+            height: 100%;
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
+
+        .content {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .title {
+            font-family: "Nico Moji", serif;
+            font-size: 84px;
+        }
+
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 5px;
+        }
+
+
+        .gray-layer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            /*background: black; */
+            opacity: 0.6;
+        }
+        {
+
+        }
+        .title {
+            color: white;
+        }
+        #search-box {
+            border :outline; 
+            border: 1px solid white;
+            border-radius: 5px;
+            height: 34px;
+            width: 80vh;
+            margin : auto;
+        }
+
+        #search-form {
+            float: left;
+        }
+        .search-text-box {
+            background-color: transparent;
+            color: white;
+            border: none
+            width: 80%;
+        }
+        
+        #search {
+            text-decoration: none;
+            color: white;
+            float: none;
+            padding: 9px 9px 6px 9px;
+        }
+
+        #search:hover {
+            animation: change-color-on-focus 0.2s;
+            animation-fill-mode: forwards;
+
+        }
+
+        #search:out-of-range {
+            animation: reset-color-to-default 0.2s;
+            animation-fill-mode: forwards;
+        }
+        .links {
+            position: relative;
+        }
+
+        .links > a {
+            color: white;
+            position: relative;
+            top: 15px;
+        }
+
+        .bottom-nav {
+            z-index: 999;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            box-shadow: black;
+            border-top: 1px solid #ffffff;
+            overflow: hidden;
+            text-align: center;
+            margin: auto;
+            background-color: white;
+        }
+		.nav-btn{
+			width: 33%;
+			
+		}
+        .bottom-nav > ul {
+            display: table;
+            list-style: none;
+            overflow: hidden;
+            color: white;
+            font-size: 50px;
+            padding: 0 0 0 0;
+            margin: auto;
+            height: 71px
+        }
+        .bottom-nav li {
+           	display: inline-block;
+			width: 33%;
+            height: 71px;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
+        }
+        .border-btn {
+            border: solid;
+            border-color: red;
+            border-radius:50%;
+            color: red;
+            text-align: center;
+            height: 50px;
+            width: 140px;
+            display: inline-block;
+            padding-top:10px;
+            font-size:18px;
+            margin-top:5px; 
+        }
+
+        @keyframes  change-color-on-focus {
+            from {
+                background-color: transparent;
+                color: white;
+            }
+            to {
+                background-color: white;
+                color: black;
+            }
+        }
+
+        @keyframes  reset-color-to-default {
+            from {
+                background-color: white;
+                color: black;
+            }
+            to {
+                background-color: transparent;
+                color: white;
+            }
+        }
+
+        .links {
+            clear: both;
+        }
+        /* スライド特集 */
+        #slide_tokusyu {
+            display: inline-block;
+            width: 80%;
+            margin: auto;
+        }
+        #slide1,#slide2,#slide3,#slide4,#slide5 {
+            position: absolute;
+            width: 80%;
+        }
+        #slide1 img,#slide2 img,#slide3 img,#slide4 img,#slide5 img {
+            opacity:0;
+            -moz-animation: imgTrans 30s infinite;
+            -webkit-animation: imgTrans 30s infinite;
+            animation: imgTrans 30s infinite;
+        }
+        #slide1 img {
+            -moz-animation-delay: 0s;
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+        #slide2 img {
+            -moz-animation-delay: 6s;
+            -webkit-animation-delay: 6s;
+            animation-delay: 6s;
+        }
+        #slide3 img {
+            -moz-animation-delay: 12s;
+            -webkit-animation-delay: 12s;
+            animation-delay: 12s;
+        }
+        #slide4 img{
+            -moz-animation-delay: 18s;
+            -webkit-animation-delay: 18s;
+            animation-delay: 18s;
+        }
+        #slide5 img {
+            -moz-animation-delay: 24s;
+            -webkit-animation-delay: 24s;
+            animation-delay: 24s;
+        }
+        #frame {
+            width: 300px;
+            height: 113px;
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+        }
+        @-webkit-keyframes imgTrans {
+         0% { opacity:0; }
+         5% { opacity:1; }
+         20% { opacity:1; }
+         25% { opacity:0; } 
+         100% { opacity:0; }
+        }
+        @-moz-keyframes imgTrans {
+         0% { opacity:0; }
+         5% { opacity:1; }
+         20% { opacity:1; }
+         25% { opacity:0; } 
+         100% { opacity:0; }
+        }
+        @keyframes imgTrans {
+         0% { opacity:0; }
+         5% { opacity:1; }
+         20% { opacity:1; }
+         25% { opacity:0; } 
+         100% { opacity:0; }
+        }
+    /*スライド広告end*/
+
+    @media screen and (min-width: 600px) {
+       /* 表示領域が800px以上の場合に適用するスタイル */
+       
+        html, body {
+            width: 360px;
+            height: 640px;
+            /*iphone 5s 320px × 568px */
+            text-align: center;
+            margin: auto;
+        }
+        .bottom-nav {
+            top:497px; 
+            margin:0;
+        }
+
+        .bottom-nav > ul {
+            margin: 0;
+        }
+        .bottom-nav li {
+            display: inline-block;
+            width: 33%;
+            height: 71px;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
+        }
+    }
+    </style>
+</head>
+<body>
+<div class="bottom-nav">
+        <ul>
+            <!-- <div "nav_btn" background-image: url('https://i.ytimg.com/vi/pmNBdTZ10e0/maxresdefault.jpg'); */ -->
+			<li><img src="img/nav_syousai-kensaku.png" alt=""/></li>
+			<li><img src="img/nav_waribikijouhou.png" alt=""/></li>
+			<li><img src="img/nav_eturan_rireki.png" alt=""/></li>
+        </ul>
+        <ul>
+			<li><img src="img/nav_genzaiti.png" width="120" height="80" alt=""/></li>
+			<li><img src="img/nav_osusume.png" width="120" height="80" alt=""/></li>
+			<li><img src="img/nav_mypage.png" width="120" height="80" alt=""/></li>
+        </ul>
+</div>
+<!--  <div class="gray-layer"></div>-->
+<div class="flex-center position-ref full-height">
+    <div class="top-right links">
+    </div>
+    <div class="content">
+        <div class="title m-b-md">
+            みなナビ
+        </div>
+        <div id="search-box">
+            <form method="POST" action="http://127.0.0.1:8000/q" accept-charset="UTF-8" id="search-form">
+                <input name="_token" type="hidden" value="T29NZHSvXHkz97JsFlmZzPQZDWjZ6lRvK1Dj6eju">
+              	<input class="form-control search-text-box" type="text" value="今日はどんなお店に？">
+            </form>
+            	<a id="search"class="fa fa-search" aria-hidden="true" href="/"></a>
+        </div>
+        <!--
+        <div class="links">
+    		<a href="https://laracasts.com">エリア検索</a>
+            <a href="https://laracasts.com">カテゴリ検索</a>
+        </div>
+        -->
+        <div class="border-btn">
+        カテゴリ
+        </div>
+        <div class="border-btn">
+            新着★割引情報
+        </div>
+        <div id="slide_tokusyu">
+        　　  <div id="frame">
+              <div id="slide1"><img src="img/slide1.png"></div>
+              <div id="slide2"><img src="img/slide2.png"></div>
+              <div id="slide3"><img src="img/slide3.png"></div>
+              <div id="slide4"><img src="img/slide4.png"></div>
+              <div id="slide5"><img src="img/slide5.png"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

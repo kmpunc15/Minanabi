@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="jp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>みなナビ</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet"/>
+    <!-- Loaded Bootstrap from Remote Server. -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            var search_text_box = $(".search-text-box");
+            var suggestion_text = '今日はどんなお店に？';
+            search_text_box.on('click focusin', function () {
+                if ($(".search-text-box").val() === suggestion_text) {
+                    this.value = '';
+                }
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        $(function() {
+          var data = [
+            'BAR Joker',
+            'すりわさ 過労死',
+            'すりわさ 家出少女',
+            'すりわさ 田中',
+            'すりわさ　汁男優',
+            'Girls BAR 家出少女',
+            '人材斡旋きるみす',
+            'スナックあいりん',
+            'おっぱいパブ恋歌',
+            'ハプニングバー田中',
+            'スナックきるみす'
+          ];
+
+          $('#txtKeywd').autocomplete({
+            source: data,
+            autoFocus: true,
+            delay: 500,
+            minLength: 1
+          });
+        });
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Styles -->
+     <link rel="stylesheet" href="../css/style.css">
+    
+</head>
+<body>
+<div class="gray-layer"></div>
+<div class="bottom-nav">
+    <ul>
+        <li>
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <p>検索</p>
+        </li>
+        <li>
+            <i class="fa fa-history" aria-hidden="true"></i>
+            <p>QRコード</p>
+        </li>
+        <li>
+            <i class="fa fa-jpy" aria-hidden="true"></i>
+            <p>TEL</p>
+        </li>
+    </ul>
+</div>
+<div class="content">
+        <div class="title m-b-md">
+            みななび
+        </div>
+      <div class="row">
+        <div class="col-xs-1"></div>
+        <div id="tenmei" class="tenpo-text col-xs-5" >
+            Bar Joker
+        </div>
+        
+        <div id="hyouka" class="tenpo-text col-xs-5" >
+            ★★★★☆
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col-xs-1"></div>
+        <div id="tag" class="tenpo-text col-xs-5" >
+            バー,ワイワイ<br>割引有り
+        </div>
+        <div id="yosan" class="tenpo-text col-xs-5" >
+            予算￥2,000～　夜
+        </div>
+      </div> 
+      
+      <div class="row">
+        <div class="col-xs-1"></div>
+        <div id="eigyou-jikan" class="tenpo-text col-xs-5" >
+            営業時間20:00～4:00
+        </div>
+        <div id="telphone" class="tenpo-text col-xs-5" >
+        ☎TEL.
+        </div>
+      </div> 
+      
+      <div class="row">
+        <div class="col-xs-1"></div>
+        <div id="juusyo" class="tenpo-text col-xs-11" >
+            〒当心斎橋2-7-32　すみ笠屋ビル4F
+        </div>
+      </div> 
+    </div>  
+  <div id="slide_tokusyu">
+    　　  <div id="frame">
+          <div id="slide1"><img src="img/slide2.png"></div>
+          <div id="slide2"><img src="img/slide2.png"></div>
+          <div id="slide3"><img src="img/slide3.png"></div>
+          <div id="slide4"><img src="img/slide4.png"></div>
+        </div>
+  </div>
+    <div class="tensyu-photo">
+    <div class="row">
+    <div class="col-xs-1"></div>
+        <div id="waribikijouhou" class="tenpo-text  col-xs-10" >
+            割引情報
+        </div>
+    <div class="col-xs-1"></div>
+    <div class="col-xs-1"></div>
+    <div id="google_map" class="col-xs-6" >
+        マップ
+    </div>
+    
+    <div id="LINE-tuika" class="col-xs-6" >
+        LINE追加
+    </div>
+  </div>
+  <div class="row">
+    <div id="twitter" class="col-xs-1" >
+        
+    </div>
+
+    <div id="facebook" class="col-xs-1" >
+        
+    </div>
+
+    <div id="instagram" class="col-xs-1" >
+        
+    </div>
+
+    <div id="line" class="col-xs-1" >
+        
+    </div>
+
+    <div id="google-plus" class="col-xs-1" >
+        
+    </div>
+    <div id="tenpo-text review">
+        
+    </div>
+  </div>
+</div>
+</body>
+</html>

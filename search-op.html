@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="jp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>みなナビ</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet"/>
+    <!-- Loaded Bootstrap from Remote Server. -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            var search_text_box = $(".search-text-box");
+            var suggestion_text = '今日はどんなお店に？';
+            search_text_box.on('click focusin', function () {
+                if ($(".search-text-box").val() === suggestion_text) {
+                    this.value = '';
+                }
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        $(function() {
+          var data = [
+            'BAR Joker',
+            'すりわさ 過労死',
+            'すりわさ 家出少女',
+            'すりわさ 田中',
+            'すりわさ　汁男優',
+            'Girls BAR 家出少女',
+            '人材斡旋きるみす',
+            'スナックあいりん',
+            'おっぱいパブ恋歌',
+            'ハプニングバー田中',
+            'スナックきるみす'
+          ];
+
+          $('#txtKeywd').autocomplete({
+            source: data,
+            autoFocus: true,
+            delay: 500,
+            minLength: 1
+          });
+        });
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Styles -->
+     <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <div class="bottom-nav">
+        <ul>
+            <li>
+                <a href="./search-op.html">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <p>検索</p>
+                </a>
+            </li>
+            <li>
+                <a href="./history.html">
+                <i class="fa fa-history" aria-hidden="true"></i>
+                <p>履歴</p>
+                </a>
+            </li>
+            <li>
+                <a href="./coupon.html">
+                <i class="fa fa-jpy" aria-hidden="true"></i>
+                <p>割安</p>
+                </a>
+            </li>
+            <li>
+                <a href="./mypage.html">
+                <i class=  "fa fa-user-o" aria-hidden="true"></i>
+                <p>マイページ</p>
+                </a>
+            </li>
+            <li>
+                <a href="./favorite.html">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <p>お気に入り</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="gray-layer"></div>
+
+<div class="content">
+
+    <div class="top-nav">
+        <div class="top-nav-return">
+            <a href="./index.html">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="top-nav-title">
+            みななび
+        </div>
+        <div class="top-nav-menu">
+           <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div class="center-300">
+        <form method="get" action="./search.html" accept-charset="UTF-8" id="search-form">
+            <!-- <input name="_token" type="hidden" value="T29NZHSvXHkz97JsFlmZzPQZDWjZ6lRvK1Dj6eju">
+                           -->
+            <label for="tags"></label>
+            次のキーワードを含む
+            <input name="kw" id="txtKeywd" class="form-control search-text-box-detailed" type="text" value="">
+            次のキーワードを含まない
+            <input name="nots" id="txtKeywd" class="form-control search-text-box-detailed" type="text" value="">
+            <span id="yosan">ご予算</span>
+            <select name="yosan">
+                <option value="1000">1000～</option>
+                <option value="2000" selected>2000～</option>
+                <option value="3000">3000～</option>
+                <option value="5000">5000～</option>
+            </select> 
+            <h5>エリア</h5>
+            <input type="checkbox" value="心斎橋" id="a1" name="area"　 />
+            <label for="a1" class="checkbox">心斎橋</label>
+
+            <input type="checkbox"  value="道頓堀" id="a2" name="area"　/>
+            <label for="a2" class="checkbox">道頓堀</label>
+
+            <input type="checkbox" value="難波" id="a3" name="area"　/>
+            <label for="a3" class="checkbox">難波</label>
+            <input type="checkbox" value="千日前" id="a4" name="area"　/>
+            <label for="a4" class="checkbox">千日前</label>
+            <h5>カテゴリ</h5>
+
+            <input type="checkbox"  value="ワイワイ" id="c1"  name="category"　/>
+            <label for="c1" class="checkbox">ワイワイ</label>
+            <input type="checkbox"  value="割引あり" id="c2"  name="category"　/>
+            <label for="c2" class="checkbox">割引あり</label>
+
+            <input type="checkbox" value="静か" id="c3" name="category"　 />
+            <label for="c3" class="checkbox">静か</label>
+
+            <input type="checkbox" value="スイーツ" id="c4"  name="category"　/>
+            <label for="c4" class="checkbox">スイーツ</label>
+
+            <input type="checkbox" value="バー" id="c5"  name="category"　/>
+            <label for="c5" class="checkbox">バー</label>
+
+            <input type="checkbox" value="居酒屋" id="c6"  name="category"　/>
+            <label for="c6" class="checkbox">居酒屋</label>
+
+            <div style="margin-left: 105px">
+
+                <input class="btn btn-info" style="font-size: 18px" type="submit" value="検索">
+            </div>    
+     </form>
+
+    </div>
+</div>
+</body>
+</html>

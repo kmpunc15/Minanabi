@@ -1,0 +1,11 @@
+root
+|----bar_joker
+| bar_joker関連ファイル、現在bar_jokerで使用している画像ファイルも
+|----css
+| style.cssのみ使用
+|----fonts
+| 未使用だったはず
+|----img
+| 画像、圧縮、フォーマット等はまだ
+|----js
+| 未使用
